@@ -8,7 +8,12 @@ pipeline{
 	agent any 
 	
    stages{
-	    stage('Docker Container Clean'){
+	   stage('Install Git') {
+            	steps {
+            	    git-installation()
+            	}
+           } 
+	   stage('Docker Container Clean'){
               steps {
                   sh'docker system prune -a --volumes -f'
                   sh'docker rm -f samplecont'
@@ -16,10 +21,11 @@ pipeline{
 	            }
 	    } 
 	    stage('Docker Container'){
-            steps {
+        	    steps {
 		            //sh'docker exec -it jenkins/jenkins:lts /bin/bash'
-                sh 'docker-compose up -d --build'
-            }
-      }
-	 }
+                	sh 'docker-compose up -d --build'
+            	    }
+  	    }
+	   
+    }
 }
