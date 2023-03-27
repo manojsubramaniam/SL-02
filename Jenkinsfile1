@@ -8,13 +8,13 @@ pipeline{
         string(name: 'PARAMETER_1', defaultValue: 'default_value_1', description: 'Description for Parameter 1')
         string(name: 'PARAMETER_2', defaultValue: 'default_value_2', description: 'Description for Parameter 2')
     }*/
-	parameters {
+/*	parameters {
 	    choice(
 	      name: 'PARAM_FILE',
 	      choices: ['file1', 'file2'],
 	      description: 'Choose which parameter file to use'
 	    )
-	}
+	} */
 
    stages{
 	 /*stage('Install nginx') {
@@ -26,7 +26,7 @@ pipeline{
             	steps {
            	    git-installation()
         	}
-	   }*/
+	   }
 	   stage('Load parameters') {
 	      steps {
 		script {
@@ -38,7 +38,7 @@ pipeline{
 		  echo "PARAM2: ${params.PARAM2}"
 		}
 	      }
-	    }
+	    }*/
 	   
 	     stage('Checkout') {
 		    steps{
