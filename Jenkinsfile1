@@ -46,11 +46,11 @@ pipeline{
 
 		    }
 	     }
-	     stage('Run My Parameterized Function') {
+	    /* stage('Run My Parameterized Function') {
 		    steps {
 			my-parameterized-function(parameter1: "${params.PARAMETER_1}", parameter2: "${params.PARAMETER_2}")
 		    }
-	     }
+	     }*/
 	     stage("Run Tests") {
 		    steps {
 			sh "echo SUCCESS on SPRINT"
