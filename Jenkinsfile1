@@ -11,7 +11,7 @@ pipeline{
 	parameters {
 	    choice(
 	      name: 'PARAM_FILE',
-	      choices: ['file1', 'file2'],
+	      choices: ['hiWorld', 'helloWorld'],
 	      description: 'Choose which parameter file to use'
 	    )
 	} 
