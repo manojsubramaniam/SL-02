@@ -28,7 +28,7 @@ pipeline{
 	     }
 	     stage('SharedLibrary Hello World'){
           	  steps {
-              		 hiWorld("manoj", "monday")
+              		 ${PARAM_FILE}("manoj", "monday")
            	 }
              }
     
