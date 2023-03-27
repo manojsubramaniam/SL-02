@@ -31,10 +31,10 @@ echo "PARAM2: ${params.PARAM2}"
 
 pipeline{
 	agent any 
-	parameters {
+	/*parameters {
         string(name: 'PARAMETER_1', defaultValue: 'default_value_1', description: 'Description for Parameter 1')
         string(name: 'PARAMETER_2', defaultValue: 'default_value_2', description: 'Description for Parameter 2')
-    }
+    }*/
 	
    stages{
 	 //  stage('Install nginx') {
