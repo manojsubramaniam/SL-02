@@ -33,7 +33,18 @@ pipeline{
 			}
 		    }
 	     }*/
-	   
+		stage('Load parameters') {
+			steps {
+				if ("${PARAM_FILE}" == 'hiWorld') {
+				  return hiWorld("manoj", "monday")
+				}
+				else if ("${PARAM_FILE}" == 'helloWorld') {
+					  return helloWorld("manoj", "monday")
+				}
+
+			}
+		}
+	
 	     stage("Run Tests") {
 		    steps {
 			sh "echo SUCCESS on Trail"
