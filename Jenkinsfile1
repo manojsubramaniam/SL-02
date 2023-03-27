@@ -35,10 +35,10 @@ pipeline{
 	     }*/
 		stage('Load parameters') {
 			steps {
-				if ('PARAM_FILE' == 'hiWorld') {
+				if (Environment == 'hiWorld') {
 				  return hiWorld("manoj", "monday")
 				}
-				else if ('PARAM_FILE' == 'helloWorld') {
+				else if (Environment == 'helloWorld') {
 				  return helloWorld("manoj", "monday")
 				}
 
