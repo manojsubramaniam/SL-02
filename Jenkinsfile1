@@ -4,43 +4,12 @@
 
 pipeline{
 	agent any 
-	/*parameters {
-        string(name: 'PARAMETER_1', defaultValue: 'default_value_1', description: 'Description for Parameter 1')
-        string(name: 'PARAMETER_2', defaultValue: 'default_value_2', description: 'Description for Parameter 2')
-    }*/
 	parameters {
-	    choice(
-	      name: 'PARAM_FILE',
-	      choices: ['hiWorld', 'helloWorld'],
-	      description: 'Choose which parameter file to use'
-	    )
+	    choice(name: 'PARAM_FILE', choices: ['hiWorld', 'helloWorld'], description: 'Choose which parameter file to use')
 	} 
 
    stages{
-	 /*stage('Install nginx') {
-            	steps {
-           	    nginx-installation()
-            	}
-           }
-	   stage('Install Git') {
-            	steps {
-           	    git-installation()
-        	}
-	   }
-	   stage('Load parameters') {
-	      steps {
-		script {
-		  def paramsFile = "${params.PARAM_FILE}.groovy"
-		  def params = load paramsFile
-          
-		  // Use the loaded parameters in your build steps
-		  //echo "PARAM1: ${params.PARAM1}"
-		//  echo "PARAM2: ${params.PARAM2}"
-		}
-	      }
-	    }*/
-	   
-	     stage('Checkout') {
+	   stage('Checkout') {
 		    steps{
 			git branch: 'main', credentialsId: '326769ca-039c-4630-beb1-6c6f79f78947', url: 'https://github.com/manojsubramaniam/SL-02.git'
 
@@ -58,7 +27,7 @@ pipeline{
 	     }
 	     stage('SharedLibrary Hello World'){
           	  steps {
-              		 ${PARAM_FILE}("manoj", "monday")
+              		 my-parameterized-function"${PARAM_FILE}"("manoj", "monday")
            	 }
              }
     
