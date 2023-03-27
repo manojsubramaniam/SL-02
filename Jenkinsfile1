@@ -21,7 +21,7 @@ pipeline{
 			sh "echo SUCCESS on ${PARAM_FILE}"
 		    }
 	     }
-	     stage('Load parameters') {
+	     /*stage('Load parameters') {
 		    steps {
 			script {
 			  def paramsFile = "${params.PARAM_FILE}.groovy"
@@ -32,7 +32,7 @@ pipeline{
 			  echo "PARAM2: ${params.PARAM2}"
 			}
 		    }
-	     }
+	     }*/
 	   
 	     stage("Run Tests") {
 		    steps {
@@ -42,6 +42,9 @@ pipeline{
 	     stage('SharedLibrary To World'){
           	  steps {
               		 hiWorld("manoj", "monday")
+			  echo "PARAM1: ${params.PARAM1}"
+                          echo "PARAM2: ${params.PARAM2}"
+			  
            	 }
              }
     
