@@ -42,8 +42,7 @@ pipeline{
 	     stage('SharedLibrary To World'){
           	  steps {
               		 hiWorld("manoj", "monday")
-			  echo "PARAM1: ${params.PARAM1}"
-                          echo "PARAM2: ${params.PARAM2}"
+			  echo "WhichFile: ${PARAM_FILE}"
 			  
            	 }
              }
