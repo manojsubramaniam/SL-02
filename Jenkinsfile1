@@ -34,8 +34,8 @@ pipeline{
 		  def params = load paramsFile
           
 		  // Use the loaded parameters in your build steps
-		  echo "PARAM1: ${params.PARAM1}"
-		  echo "PARAM2: ${params.PARAM2}"
+		  //echo "PARAM1: ${params.PARAM1}"
+		//  echo "PARAM2: ${params.PARAM2}"
 		}
 	      }
 	    }
