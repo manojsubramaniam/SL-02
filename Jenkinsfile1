@@ -18,7 +18,18 @@ pipeline{
          //   	    git-installation()
        //     	}
         //   } 
-	     stage('Example') {
+		stage("Run Tests") {
+		    steps {
+			sh "echo SUCCESS on SPRINT"
+		    }
+		}
+		stage('Checkout') {
+		    steps{
+			git branch: 'LIVE', credentialsId: '326769ca-039c-4630-beb1-6c6f79f78947', url: 'https://github.com/manojsubramaniam/SL-02.git'
+
+		    }
+		}
+	     stage('SharedLibrary HelloWorld') {
           	  steps {
               		  helloWorld("manoj", "monday")
            	 }
