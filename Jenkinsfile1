@@ -9,7 +9,7 @@ pipeline{
 	} 
 
    stages{
-	   stage('Checkout') {
+	     stage('Checkout') {
 		    steps{
 			git branch: 'main', credentialsId: '326769ca-039c-4630-beb1-6c6f79f78947', url: 'https://github.com/manojsubramaniam/SL-02.git'
 
@@ -21,18 +21,18 @@ pipeline{
 			sh "echo SUCCESS on ${PARAM_FILE}"
 		    }
 	     }
-	   stage('Load parameters') {
-	      steps {
-		script {
-		  def paramsFile = "${params.PARAM_FILE}.groovy"
-		  def params = load paramsFile
+	     stage('Load parameters') {
+		    steps {
+			script {
+			  def paramsFile = "${params.PARAM_FILE}.groovy"
+			  def params = load paramsFile
 
-		  // Use the loaded parameters in your build steps
-		  echo "PARAM1: ${params.PARAM1}"
-		  echo "PARAM2: ${params.PARAM2}"
-		}
-	      }
-	    }
+			  // Use the loaded parameters in your build steps
+			  echo "PARAM1: ${params.PARAM1}"
+			  echo "PARAM2: ${params.PARAM2}"
+			}
+		    }
+	     }
 	   
 	     stage("Run Tests") {
 		    steps {
