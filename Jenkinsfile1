@@ -2,6 +2,31 @@
 
 @Library('shared-library') _ //master or whatever branch
 
+def userInput = input(
+  message: 'Which parameter file do you want to use?',
+  parameters: [
+    [$class: 'ChoiceParameterDefinition', 
+     choices: ['file1', 'file2'], 
+     description: 'Choose the parameter file to use']
+  ]
+)
+
+// Load the selected parameter file
+def params
+switch(userInput) {
+  case 'file1':
+    params = load('file1.groovy')
+    break
+  case 'file2':
+    params = load('file2.groovy')
+    break
+  default:
+    error "Invalid selection: ${userInput}"
+}
+
+// Use the loaded parameters in your build steps
+echo "PARAM1: ${params.PARAM1}"
+echo "PARAM2: ${params.PARAM2}"
 
 
 pipeline{
