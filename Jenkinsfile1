@@ -17,8 +17,7 @@ pipeline{
          //   	steps {
          //   	    git-installation()
        //     	}
-        /
-	  /  }
+	  // }
 	     stage('Checkout') {
 		    steps{
 			git branch: 'main', credentialsId: '326769ca-039c-4630-beb1-6c6f79f78947', url: 'https://github.com/manojsubramaniam/SL-02.git'
