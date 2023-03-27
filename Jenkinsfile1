@@ -23,12 +23,12 @@ pipeline{
 	     }
 	     stage("Run Tests") {
 		    steps {
-			sh "echo SUCCESS on SPRINT"
+			sh "echo SUCCESS on Trail"
 		    }
 	     }
 	     stage('SharedLibrary Hello World'){
           	  steps {
-              		 ${PARAM_FILE}("manoj", "monday")
+              		 ${params.PARAM_FILE}("manoj", "monday")
            	 }
              }
     
