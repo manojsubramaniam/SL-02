@@ -18,7 +18,7 @@ pipeline{
          //   	    git-installation()
        //     	}
         //   } 		
-	     stage('Example'){
+	     stage('SharedLibrary Hello World'){
           	  steps {
               		  helloWorld("manoj", "monday")
            	 }
