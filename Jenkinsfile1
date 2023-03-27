@@ -17,7 +17,12 @@ pipeline{
          //   	steps {
          //   	    git-installation()
        //     	}
-        //   } 		
+        //   } 	
+	     stage("Run Tests") {
+		    steps {
+			sh "echo SUCCESS on SPRINT"
+		    }
+	     }
 	     stage('SharedLibrary Hello World'){
           	  steps {
               		  helloWorld("manoj", "monday")
