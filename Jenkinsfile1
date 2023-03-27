@@ -15,11 +15,12 @@ pipeline{
 
 		    }
 	     }
-	   /* stage('Run My Parameterized Function') {
+	     stage('Run My Parameterized Function') {
 		    steps {
-			sh "echo SUCCESS on "${params.PARAM_FILE}""
+		//	sh "echo SUCCESS on "${params.PARAM_FILE}""
+			sh "echo SUCCESS on ${PARAM_FILE}"
 		    }
-	     }*/
+	     }
 	     stage("Run Tests") {
 		    steps {
 			sh "echo SUCCESS on SPRINT"
