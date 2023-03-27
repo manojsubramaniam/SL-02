@@ -21,14 +21,27 @@ pipeline{
 			sh "echo SUCCESS on ${PARAM_FILE}"
 		    }
 	     }
+	   stage('Load parameters') {
+	      steps {
+		script {
+		  def paramsFile = "${params.PARAM_FILE}.groovy"
+		  def params = load paramsFile
+
+		  // Use the loaded parameters in your build steps
+		  echo "PARAM1: ${params.PARAM1}"
+		  echo "PARAM2: ${params.PARAM2}"
+		}
+	      }
+	    }
+	   
 	     stage("Run Tests") {
 		    steps {
 			sh "echo SUCCESS on Trail"
 		    }
 	     }
-	     stage('SharedLibrary Hello World'){
+	     stage('SharedLibrary To World'){
           	  steps {
-              		 ${params.PARAM_FILE}("manoj", "monday")
+              		 ${PARAM_FILE}("manoj", "monday")
            	 }
              }
     
