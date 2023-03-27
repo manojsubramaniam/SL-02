@@ -26,7 +26,7 @@ pipeline{
             	steps {
            	    git-installation()
         	}
-	   }*/
+	   }
 	   stage('Load parameters') {
 	      steps {
 		script {
@@ -38,7 +38,7 @@ pipeline{
 		//  echo "PARAM2: ${params.PARAM2}"
 		}
 	      }
-	    }
+	    }*/
 	   
 	     stage('Checkout') {
 		    steps{
@@ -58,7 +58,7 @@ pipeline{
 	     }
 	     stage('SharedLibrary Hello World'){
           	  steps {
-              		  helloWorld("manoj", "monday")
+              		 "${PARAM_FILE}"("manoj", "monday")
            	 }
              }
     
