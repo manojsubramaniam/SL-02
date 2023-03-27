@@ -30,7 +30,7 @@ pipeline{
 	   stage('Load parameters') {
 	      steps {
 		script {
-		  def paramsFile = "${PARAM_FILE}.groovy"
+		  def paramsFile = "${params.PARAM_FILE}.groovy"
 		  def params = load paramsFile
           
 		  // Use the loaded parameters in your build steps
