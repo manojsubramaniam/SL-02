@@ -6,6 +6,10 @@
 
 pipeline{
 	agent any 
+	parameters {
+        string(name: 'PARAMETER_1', defaultValue: 'default_value_1', description: 'Description for Parameter 1')
+        string(name: 'PARAMETER_2', defaultValue: 'default_value_2', description: 'Description for Parameter 2')
+    }
 	
    stages{
 	 //  stage('Install nginx') {
@@ -22,6 +26,11 @@ pipeline{
 		    steps{
 			git branch: 'main', credentialsId: '326769ca-039c-4630-beb1-6c6f79f78947', url: 'https://github.com/manojsubramaniam/SL-02.git'
 
+		    }
+	     }
+	     stage('Run My Parameterized Function') {
+		    steps {
+			my-parameterized-function(parameter1: "${params.PARAMETER_1}", parameter2: "${params.PARAMETER_2}")
 		    }
 	     }
 	     stage("Run Tests") {
