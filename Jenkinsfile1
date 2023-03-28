@@ -19,6 +19,7 @@ pipeline{
 		    steps {
 		//	sh "echo SUCCESS on "${params.PARAM_FILE}""
 			sh "echo SUCCESS on ${PARAM_FILE}"
+			sh "echo SUCCESS on PARAM_FILE()"
 		    }
 	     }
 	     stage('Load parameters') {
