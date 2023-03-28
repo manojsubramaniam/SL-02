@@ -19,7 +19,7 @@ pipeline{
 		    steps {
 		//	sh "echo SUCCESS on "${params.PARAM_FILE}""
 			sh "echo SUCCESS on ${PARAM_FILE}"
-			sh "echo SUCCESS on PARAM_FILE()"
+		//	sh "echo SUCCESS on PARAM_FILE()"
 		    }
 	     }
 	/*     stage('Load parameters') {
@@ -54,7 +54,7 @@ pipeline{
 	     stage('SharedLibrary To World'){
           	  steps {
               		 hiWorld("manoj", "monday")
-			  echo "WhichFile: ${PARAM_FILE}"
+			 echo "WhichFile: ${PARAM_FILE}"
 			  
            	 }
              }
