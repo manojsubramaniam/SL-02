@@ -33,7 +33,7 @@ pipeline{
 			  echo "PARAM2: ${params.PARAM2}"
 			}
 		    }
-	     }
+	     }*/
 		stage('Load parameters') {
 			steps {
 				if (PARAM_FILE == 'hiWorld') {
@@ -44,7 +44,7 @@ pipeline{
 				}
 
 			}
-		}*/
+		}
 	
 	     stage("Run Tests") {
 		    steps {
