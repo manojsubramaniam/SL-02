@@ -22,7 +22,7 @@ pipeline{
 		//	sh "echo SUCCESS on PARAM_FILE()"
 		    }
 	     }
-	/*     stage('Load parameters') {
+	    stage('Load parameters') {
 		    steps {
 			script {
 			  def paramsFile = "${params.PARAM_FILE}.groovy"
@@ -33,8 +33,8 @@ pipeline{
 			  echo "PARAM2: ${params.PARAM2}"
 			}
 		    }
-	     }*/
-		stage('Load parameters') {
+	     }
+	/* 	stage('Load parameters') {
 			steps {
 				if (PARAM_FILE == 'hiWorld') {
 				  return hiWorld("manoj", "monday")
@@ -44,7 +44,7 @@ pipeline{
 				}
 
 			}
-		}
+		}*/
 	
 	     stage("Run Tests") {
 		    steps {
